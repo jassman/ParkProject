@@ -15,6 +15,6 @@
   <div id="wrapper" class="row wrapper">
     <header class="row header">
       <div class="col m12">
-          <h1>Parkeasy</h1>
+          <h1>Parkeasy</h1>  
       </div>
     </header>

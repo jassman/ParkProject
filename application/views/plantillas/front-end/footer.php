@@ -1,8 +1,7 @@
 <button id="mm-menu-toggle" class="mm-menu-toggle">Toggle Menu</button>
   <nav id="mm-menu" class="mm-menu">
     <div class="mm-menu__header">
-      <img class="circle responsive-img" src="<?php echo base_url(); ?>files/img/<?php echo $datos_usuario['foto']; ?>">
-      <h2 class="mm-menu__title">Nick Salloum</h2>
+      <h2 class="mm-menu__title">Parkeasy</h2>
     </div>
     <ul class="mm-menu__items">
       <li class="mm-menu__item">
@@ -11,7 +10,7 @@
         </a>
       </li>
       <li class="mm-menu__item">
-        <a class="mm-menu__link" href="#">
+        <a class="mm-menu__link" href="profile">
           <span class="mm-menu__link-text">Profile</span>
         </a>
       </li>

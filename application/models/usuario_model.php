@@ -53,7 +53,7 @@ class Usuario_model extends CI_Model {
         $config['protocol'] = 'smtp';
         $config['smtp_host'] = 'ssl://smtp.googlemail.com' ; //'ssl://smtp.googlemail.com';
         $config['smtp_port'] = 465;//465
-        $config['smtp_user'] = 'parkeasing';
+        $config['smtp_user'] = 'parkeasing@gmail.com';
         $config['smtp_pass'] = 'metralla';
         $config['validation'] = TRUE;
 
@@ -201,12 +201,6 @@ class Usuario_model extends CI_Model {
         return $salt . '.' . md5($salt . $password);
     }
 
-    // Check if password is valid
-//    function check_password($password, $hashed_password) {
-//        list($salt, $hash) = explode('.', $hashed_password);
-//        $hashed2 = $salt . '.' . md5($salt . $password);
-//        return ($hashed_password == $hashed2);
-//    }
     // create salt for password hashing
     private function generate_salt($length = 10) {
         $characterList = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";

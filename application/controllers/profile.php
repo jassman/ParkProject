@@ -21,12 +21,14 @@ class Profile extends CI_Controller {
     public function index(){
         
         $usuario= $this->session->userdata('usuario');
-        $pass = $this->session->userdata('pass');
         
         $datos['datos_usuario'] = $this->usuario_model->get_by_username($usuario);
         $datos['contenido'] = 'profile_view';
         
         $this->load->view('plantillas/plantilla', $datos);
-
+        
     }
+    
+    
+    
 }
