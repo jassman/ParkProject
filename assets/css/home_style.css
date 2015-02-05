@@ -1,0 +1,51 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 06-ene-2015, 23:19:43
+    Author     : asus-pc
+*/
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
+iframe{
+    width: 100%;
+    height: 100%;
+    z-index: -5;
+    position: absolute;
+    top: 0;
+}
+
+.portada-inicio{ 
+    height: 200px;
+    text-align:center;
+    z-index: 5;
+}
+
+.portada-inicio h1{
+    margin:auto;
+    vertical-align:middle;
+    color: white;
+}
+
+.boton-inicio{
+    margin: 0 auto;
+    width: 100px;
+    margin-top: 5px;
+}
+
+.contenedor-botones-inicio{
+    margin-top: 20%;
+}
+
+a{
+    background-color:#FFC107;
+}
+
+.modal-activar{
+    background-color: #03A9F4;
+}

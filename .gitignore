@@ -1,0 +1,11 @@
+.DS_Store
+
+application/cache/*
+!application/cache/index.html
+!application/cache/.htaccess
+
+application/logs/*
+!application/logs/index.html
+!application/logs/.htaccess
+/plantillas-videotutorial-7/Plantilla HTML/nbproject/private/
+/nbproject/private/

@@ -1,0 +1,79 @@
+body{
+    background-color: #C5CAE9;
+}
+
+.header {
+    margin-left: 10%;
+}
+
+
+
+
+.barra-menu {
+    background-color: #7986CB;
+    margin-bottom: 10px;
+    padding-left: 20%;
+}
+
+img.logo {
+    max-height: 200px;
+    max-width: 200px;
+}
+/*CONTENIDO GENERAL - (SIDEBAR Y CONTENIDOS) */
+
+.contenido{
+    background-color: red;
+    margin-top: 10px;
+}    
+
+/* FIN CONTENIDO GENERAL - (SIDEBAR Y CONTENIDOS) */
+
+/*SIDEBAR - BARRA LATERAL*/
+
+.sidebar{
+    background-color:#7986CB;
+}
+/* FIN SIDEBAR - BARRA LATERAL*/
+
+/*PAGINA PRINCIPAL*/
+
+.portada-inicio{
+    width: 50%; 
+    height: 200px;
+    background-color: green;
+}
+
+.portada-inicio h1{
+    margin:auto;
+    vertical-align:middle;
+}
+
+.inicio{
+    margin: 0 auto;
+    width: 100px;
+    margin-top: 5px;
+}
+
+.contenedor-botones-inicio{
+    margin-top: 20%;
+}
+
+/*FIN PAGINA PRINCIPAL*/
+
+/* MAPA VIEW */
+
+.mapa ul li{
+    list-style: none;
+}
+
+.mapa{
+    width: 100%;
+    height: 100%;
+}
+
+/* FIN MAPA VIEW */
+
+/* PROFILE VIEW */
+
+
+/* FIN PROFILE VIEW */
