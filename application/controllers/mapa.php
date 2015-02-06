@@ -11,6 +11,7 @@ class Mapa extends CI_Controller {
     {
         parent::__construct();
         $this->load->model('mapa_model');
+        $this->load->model('usuario_model');
     }
     
     public function index() {
@@ -62,6 +63,10 @@ class Mapa extends CI_Controller {
         $datos['contenido'] = "mapa_view";
         $datos['datos'] = $data;
         $datos['map'] = $map;
+        $usuario= $this->session->userdata('usuario');
+        
+        $datos['datos_usuario'] = $this->usuario_model->get_by_username($usuario);
+        
         $this->load->view('plantillas/plantilla', $datos);
         
    }
