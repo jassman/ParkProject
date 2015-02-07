@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 $(document).ready(function() {
+
+    
     $(".dropdown-button").dropdown({
         inDuration: 300,
         outDuration: 225,
@@ -12,5 +14,18 @@ $(document).ready(function() {
         alignment: 'right', // Aligns dropdown to left or right edge (works with constrain_width)
         gutter: 0// Spacing from edge);
     });
+    
+    
+    $(".btn-opciones").click(function(){
+       
+        $(".btn-opciones").css("display","none");
+        $(".dw-content").css("display","block");
+        
+    });
+    
+    
+    
+    
+    
 });
 

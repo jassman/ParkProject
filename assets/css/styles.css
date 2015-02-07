@@ -1,0 +1,208 @@
+/*!
+Title: TITLE
+Author: Nick Salloum
+Author URI: http://callmenick.com/
+Description: My theme
+Version: 0.1.0
+*/
+/* =============================================================================
+  RESET
+============================================================================= */
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+em,
+img,
+small,
+strong,
+ol,
+ul,
+li,
+article,
+aside,
+figure,
+figcaption,
+footer,
+header,
+nav,
+section {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+main,
+nav,
+section {
+  display: block;
+}
+
+ol,
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* =============================================================================
+  BUTTON RESETS
+============================================================================= */
+button {
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  background: none;
+  border: none;
+  border-radius: none;
+  box-shadow: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+}
+
+/* =============================================================================
+  BOX SIZING AND CLEARFIX
+============================================================================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* =============================================================================
+  HTML & BODY
+============================================================================= */
+body {
+  color: #727272;
+  background-color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+body.mm-menu-open {
+  overflow: hidden;
+}
+
+/* =============================================================================
+  HEADINGS
+============================================================================= */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 22px;
+  color: #212121;
+  line-height: 1;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 22px;
+}
+
+/* =============================================================================
+  TEXT
+============================================================================= */
+p {
+  margin-bottom: 22px;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+a {
+  color: #CDDC39;
+  text-decoration: none;
+}
+
+/* =============================================================================
+  PRIMARY LAYOUT
+============================================================================= */
+.wrapper {
+  z-index: 5;
+  -webkit-transition: -webkit-transform 0.5s;
+          transition: transform 0.5s;
+}
+
+.wrapper.mm-menu-open {
+  -webkit-transform: translateX(300px);
+      -ms-transform: translateX(300px);
+          transform: translateX(300px);
+}
+
+.container {
+  padding: 0 72px;
+  width: 100%;
+}
+
+main {
+  margin-top: 100px;
+  padding: 0;
+}
+
+section {
+  margin-bottom: 36px;
+}
+
+/* =============================================================================
+  HEADER
+============================================================================= */
+.header {
+  padding: 24px 0;
+  text-align: center;
+  height: 70px;
+  width: 100%;
+  position: fixed;
+  top:0;
+  z-index: 19;
+  background-color: white;
+  overflow: hidden;
+}
+
+.header__title {
+  margin: 0;
+}
+
+.dw-content{
+    display: none;
+}
+
+.btn-opciones{
+    background-color: red;
+}
