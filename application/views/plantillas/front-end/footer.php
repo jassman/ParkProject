@@ -1,10 +1,10 @@
-
 </div>
 <button id="mm-menu-toggle" class="mm-menu-toggle">Toggle Menu</button>
   <nav id="mm-menu" class="mm-menu">
     <div class="mm-menu__header">
       <img class="circle responsive-img" src="<?php echo base_url(); ?>files/img/<?php echo $datos_usuario['foto']; ?>">
       <h2 class="mm-menu__title"><?php echo $datos_usuario['nombre']; ?> <?php echo $datos_usuario['apellido']; ?> </h2>
+      <h2 class="mm-menu__title">Parkeasy</h2>
     </div>
     <ul class="mm-menu__items">
       <li class="mm-menu__item">

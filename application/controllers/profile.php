@@ -26,6 +26,9 @@ class Profile extends CI_Controller {
         $datos['contenido'] = 'profile_view';
         
         $this->load->view('plantillas/plantilla', $datos);
-
+        
     }
+    
+    
+    
 }

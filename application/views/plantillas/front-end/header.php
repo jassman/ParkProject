@@ -26,7 +26,4 @@
                     </ul>
                     <a class='btn-opciones' href='#' data-activates='dwopciones'><i class="mdi-navigation-more-vert"></i></a>
                 </div>
-                    <!--                <div class="col m2">
-                                       <a class='dropdown-button btn black' href='#' data-activates='dwopciones'><i class="mdi-navigation-more-vert"></i></a>
-                                    </div>-->
             </header>
