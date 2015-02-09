@@ -1,4 +1,4 @@
-jQuery(document).ready(function(){
+$(document).ready(function() {
 
             function datos_marker(lat, lng, marker)
             {
@@ -6,8 +6,5 @@ jQuery(document).ready(function(){
                 map.panTo(mi_marker);
                 google.maps.event.trigger(marker, 'click');
             }
-
-          
-
 
 });

@@ -18,12 +18,15 @@
                     <h1>Parkeasy</h1>
                 </div>
                 <div class="col m2">
-                    <ul id="dwopciones" class="dw-content">
-                        <li><a href="#!">one</a></li>
-                        <li><a href="#!">two</a></li>
+                    <!-- Dropdown Trigger -->
+                    <a class='dropdown-button' href='#' data-activates='dropdown1'><i class="mdi-navigation-more-vert"></i></a>
+                    <!-- Dropdown Structure -->
+                    <ul id='dropdown1' class='dropdown-content'>
+                        <li><a href="#!">Opciones</a></li>
+                        <li><a href="#!">GPS</a></li>
                         <li class="divider"></li>
-                        <li><a href="#!">three</a></li>
+                        <li><a href="#!">Reportar un error</a></li>
+                        <li><a href="#!">Salir</a></li>
                     </ul>
-                    <a class='btn-opciones' href='#' data-activates='dwopciones'><i class="mdi-navigation-more-vert"></i></a>
                 </div>
             </header>

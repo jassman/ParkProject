@@ -33,6 +33,7 @@ class Mapa extends CI_Controller {
         $this->googlemaps->initialize($config);
         
         $markers = $this->mapa_model->get_markers();
+        
         foreach($markers as $info_marker)
         {
             $marker = array();
@@ -51,7 +52,6 @@ class Mapa extends CI_Controller {
  
             //si queremos que se pueda arrastrar el marker
             //$marker['draggable'] = TRUE;
-            //si queremos darle una id, muy útil
         }
         
         $data = $this->mapa_model->get_markers();
@@ -150,5 +150,6 @@ class Mapa extends CI_Controller {
          $this->load->view('muestraCoche', $arrayArticulo);
       }
    }
+   
 
 }

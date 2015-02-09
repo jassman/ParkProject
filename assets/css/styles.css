@@ -192,17 +192,8 @@ section {
   top:0;
   z-index: 19;
   background-color: white;
-  overflow: hidden;
 }
 
 .header__title {
   margin: 0;
-}
-
-.dw-content{
-    display: none;
-}
-
-.btn-opciones{
-    background-color: red;
 }
