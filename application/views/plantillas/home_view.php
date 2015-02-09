@@ -81,13 +81,13 @@
                             <div id="modal_entrar" class="modal">
                                 <form class="form-horizontal" method="post" action="<?php echo site_url('login'); ?>">
                                     <div class="row">
-                                        <div class="input-field">
+                                        <div class="input-field col-s8">
                                             <label class="control-label" for="login">Nombre Usuario</label>
                                             <input type="text" class="input-xlarge" id="login" name="login" value="<?php echo set_value('login'); ?>">
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="input-field">
+                                        <div class="input-field col-s8">
                                             <label class="control-label" for="password">Contraseña</label>
                                             <input type="password" class="input-xlarge" id="password" name="password" value="">
                                         </div>

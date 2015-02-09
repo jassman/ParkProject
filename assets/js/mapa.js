@@ -1,4 +1,5 @@
 $(document).ready(function() {
+      
 
 	var testigo=0;
 
