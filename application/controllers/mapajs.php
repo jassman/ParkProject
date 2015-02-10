@@ -31,4 +31,14 @@ class Mapajs extends CI_Controller {
         $this->load->view('plantillas/plantilla', $datos);
     }
     
+    
+    public function get_markers () {
+        
+        $data = $this->mapa_model->get_markers(); 
+        $hola = json_encode($data);
+        echo json_encode($data);
+            
+    }
+    
+    
 }

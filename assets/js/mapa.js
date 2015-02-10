@@ -1,7 +1,8 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
 
     var map;
+    var markers;
 
     function initialize() {
         var mapOptions = {
@@ -12,7 +13,7 @@ $(document).ready(function() {
 
         // Try HTML5 geolocation
         if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function(position) {
+            navigator.geolocation.getCurrentPosition(function (position) {
                 var pos = new google.maps.LatLng(position.coords.latitude,
                         position.coords.longitude);
 
@@ -21,15 +22,17 @@ $(document).ready(function() {
                     position: pos,
                     content: 'Location found using HTML5.'
                 });
-                
+
                 var miMarker = new google.maps.Marker({
                     position: pos,
                     map: map
                 });
 
                 map.setCenter(pos);
-            }, function() {
-                handleNoGeolocation(true);
+                get_places();
+            }, function () {
+                
+                handleNoGeolocation(true);              
             });
         } else {
             // Browser doesn't support Geolocation
@@ -38,6 +41,7 @@ $(document).ready(function() {
     }
 
     function handleNoGeolocation(errorFlag) {
+        
         if (errorFlag) {
             var content = 'Error: The Geolocation service failed.';
         } else {
@@ -52,22 +56,41 @@ $(document).ready(function() {
 
         var infowindow = new google.maps.InfoWindow(options);
         map.setCenter(options.position);
+      
+    } 
+
+
+    function get_places() {
+
+        $.ajax({
+            type: "POST",
+            url: "mapajs/get_markers",
+            success: function (response) {
+
+                    var places = response.places;
+
+                    // loop through places and add markers
+                    for(var i in places) {
+
+                        //create gmap latlng obj
+                        tmpLatLng = new google.maps.LatLng(places[i].pos_x, places[i].pos_y);
+
+                        // make and place map maker.
+                        var marker = new google.maps.Marker({
+                            map: map,
+                            position: tmpLatLng,
+                        });
+
+                        // not currently used but good to keep track of markers
+                        markers.push(marker);
+                }
+            }
+        });
+        
+
     }
 
     google.maps.event.addDomListener(window, 'load', initialize);
-
-
-//    $.ajax({
-//        type: "POST",
-//        url: "mapa.php",
-//        data: { name: "John", location: "Boston" }
-//      })
-//        .done(function( msg ) {
-//          alert( "Data Saved: " + msg );
-//        });
-    
-
-
 //
 //	var testigo=0;
 //
