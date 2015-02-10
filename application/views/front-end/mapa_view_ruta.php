@@ -1,3 +1,5 @@
+
+<main class="row main">
 <div>
     <label for="origen">Origen</label>
     <input type="text" name="origen" id="origen" placeholder="calle, ciudad, estado..." />
@@ -25,6 +27,7 @@
     <div id="map_canvas" style="float:left; width:70%; height:500px"></div>
     <div id="panel_ruta" style="float:right; overflow: auto; width:30%; height: 500px"></div>
 </div>
+</main>
 
 <script>
 
@@ -59,3 +62,5 @@
     });
 
 </script>
+
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>

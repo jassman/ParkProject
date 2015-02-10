@@ -10,6 +10,7 @@
         <link href="<?php echo base_url(); ?>assets/css/materialize.css" rel="stylesheet" type="text/css"  media="screen,projection">
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/styles.css">
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/stylemenu.css">
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
     </head>
     <body>
         <div id="wrapper" class="row wrapper">
