@@ -1,8 +1,17 @@
 
 <main class="row main">
     <div class="col m12">
+        <script>
+                function datos_marker(lat, lng, marker)
+    {
+        var mi_marker = new google.maps.LatLng(lat, lng);
+        map.panTo(mi_marker);
+        google.maps.event.trigger(marker, 'click');
+    }
+    
+    </script>
         <section>
-            <div class="mapa">
+            <div class="mapa" id="mapa">
                 <?= $map['js'] ?>
                 <?= $map['html'] ?>
                 <ul>

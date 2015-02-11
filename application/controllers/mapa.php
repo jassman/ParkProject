@@ -17,19 +17,18 @@ class Mapa extends CI_Controller {
     
     public function index() {
         
-
         $config = array();
-        $config['center'] = 'auto';
         $config['zoom'] = 'auto'; 
         $config['mapTypeControlStyle'] = 'DROPDOWN_MENU'; 
-        $config['onboundschanged'] = 
-                'if (!centreGot) {
-                    var mapCentre = map.getCenter();
-                    marker_0.setOptions({
-                        position: new google.maps.LatLng(mapCentre.lat(), mapCentre.lng()) 
-                    });
-                }
-                centreGot = true;';
+        
+//        $config['onboundschanged'] = 
+//                'if (!centreGot) {
+//                    var mapCentre = map.getCenter();
+//                    marker_0.setOptions({
+//                        position: new google.maps.LatLng(mapCentre.lat(), mapCentre.lng()) 
+//                    });
+//                }
+//                centreGot = true;';
         $this->googlemaps->initialize($config);
         
         $markers = $this->mapa_model->get_markers();

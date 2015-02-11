@@ -22,8 +22,6 @@ class Mapajs extends CI_Controller {
     
     public function index() {
         
-        
-        
         $usuario= $this->session->userdata('usuario');     
         $datos['datos_usuario'] = $this->usuario_model->get_by_username($usuario);
         $datos['contenido'] = "mapa_view_js";
