@@ -35,7 +35,8 @@ class Mapajs extends CI_Controller {
     public function get_markers () {
         
         $data = $this->mapa_model->get_markers(); 
-        $hola = json_encode($data);
+       
+        header('Content-Type: application/json');
         echo json_encode($data);
             
     }
