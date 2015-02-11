@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
 
     var map;
@@ -10,12 +10,13 @@ $(document).ready(function() {
         };
         map = new google.maps.Map(document.getElementById('map-canvas'),
                 mapOptions);
-                
-        
+
+
 
         // Try HTML5 geolocation
         if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function(position) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+
                 var pos = new google.maps.LatLng(position.coords.latitude,
                         position.coords.longitude);
 
@@ -30,10 +31,38 @@ $(document).ready(function() {
                     map: map
                 });
 
-                get_places();
+                $.getJSON('mapajs/get_markers', function (data) {
+                    $.each(data, function (i, value) {
+                        var pos = new google.maps.LatLng(parseFloat(value.pos_x), parseFloat(value.pos_y));
+                        alert(pos);
+                        var miMarker = new google.maps.Marker({
+                            position: pos,
+                            map: map,
+                            title: "Hello World!"
+                        });
+
+                    });
+
+
+                });
+
+
+
+                for (var i = 0; i <= 5; i++) {
+
+                    var pos = new google.maps.LatLng(parseFloat("39.500529") + i, parseFloat("-0.355709") + i);
+
+                    var miMarker = new google.maps.Marker({
+                        position: pos,
+                        map: map
+                    });
+
+
+                }
+
                 map.setCenter(pos);
-                
-            }, function() {
+
+            }, function () {
 
                 handleNoGeolocation(true);
             });
@@ -65,27 +94,30 @@ $(document).ready(function() {
 
 
 
-    function get_places() {
-        
-        $.post('mapajs/get_markers', function(data){
-            
+    function get_places(map) {
+
+        $.post('mapajs/get_markers', function (data) {
+
             var result = data;
-            
-            $.each(result, function(i, val){
-                
+
+            $.each(result, function (i, val) {
+
                 var x = result[i].pos_x;
                 var y = result[i].pos_y;
-                
+
                 var tmpLatLng = new google.maps.LatLng(x, y);
-                
+
                 var marker = new google.maps.Marker({
-                        map: map,
-                        position: tmpLatLng
-                    });
+                    map: map,
+                    position: tmpLatLng
+                });
+
+                markers.push(marker);
             });
-            
+
+
         });
-       
+
 
 
     }
