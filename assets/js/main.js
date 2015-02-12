@@ -1,25 +1,56 @@
-$(document).ready(function() {
+
+    var pos;
+
+$(document).ready(function () {
+   
+
+    function CenterControl(controlDiv, map) {
+
+        // Set CSS for the control border
+        var controlUI = document.createElement('div');
+        controlUI.style.backgroundColor = '#fff';
+        controlUI.style.border = '2px solid #fff';
+        controlUI.style.borderRadius = '3px';
+        controlUI.style.boxShadow = '0 2px 6px rgba(0,0,0,.3)';
+        controlUI.style.cursor = 'pointer';
+        controlUI.style.marginBottom = '22px';
+        controlUI.style.textAlign = 'center';
+        controlUI.title = 'Click to recenter the map';
+        controlDiv.appendChild(controlUI);
+
+        // Set CSS for the control interior
+        var controlText = document.createElement('div');
+        controlText.style.color = 'rgb(25,25,25)';
+        controlText.style.fontFamily = 'Roboto,Arial,sans-serif';
+        controlText.style.fontSize = '16px';
+        controlText.style.lineHeight = '38px';
+        controlText.style.paddingLeft = '5px';
+        controlText.style.paddingRight = '5px';
+        controlText.innerHTML = 'Center Map';
+        controlUI.appendChild(controlText);
+
+        // Setup the click event listeners: simply set the map to
+        // Chicago
+        google.maps.event.addDomListener(controlUI, 'click', function () {
+            map.setCenter(pos);
+        });
+
+    }
     
-    var poly;
 
     function initialize() {
 
         if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function(position) {
+            navigator.geolocation.getCurrentPosition(function (position) {
 
-                var pos = new google.maps.LatLng(position.coords.latitude,
+                pos = new google.maps.LatLng(position.coords.latitude,
                         position.coords.longitude);
 
-                var infowindow = new google.maps.InfoWindow({
-                    map: map,
-                    position: pos,
-                    content: 'Estas aqui!'
-                });
-                
                 var miMarker = new google.maps.Marker({
                     position: pos,
                     map: map
                 });
+
                 
                 map.setCenter(pos);
             });
@@ -27,17 +58,13 @@ $(document).ready(function() {
             alert("no geo");
         }
         
-        var polyOptions = {
-            strokeColor: '#000000',
-            strokeOpacity: 1.0,
-            strokeWeight: 3
-          }
-          poly = new google.maps.Polyline(polyOptions);
-          poly.setMap(map);    
-          
+        var centerControlDiv = document.createElement('div');
+        var centerControl = new CenterControl(centerControlDiv, map);
 
+        centerControlDiv.index = 1;
+        map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(centerControlDiv);
     }
-    
+
     google.maps.event.addDomListener(window, 'load', initialize);
 
 });

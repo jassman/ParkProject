@@ -18,17 +18,11 @@ class Mapa extends CI_Controller {
     public function index() {
         
         $config = array();
+        
         $config['zoom'] = 'auto'; 
+        
         $config['mapTypeControlStyle'] = 'DROPDOWN_MENU'; 
         
-//        $config['onboundschanged'] = 
-//                'if (!centreGot) {
-//                    var mapCentre = map.getCenter();
-//                    marker_0.setOptions({
-//                        position: new google.maps.LatLng(mapCentre.lat(), mapCentre.lng()) 
-//                    });
-//                }
-//                centreGot = true;';
         $this->googlemaps->initialize($config);
         
         $markers = $this->mapa_model->get_markers();
@@ -43,7 +37,8 @@ class Mapa extends CI_Controller {
             //infowindow de los markers(ventana de información)    
             $marker ['infowindow_content'] = $info_marker->infowindow;
             //la id del marker
-            $marker['id'] = $info_marker->id; 
+            $marker['id'] = $info_marker->id;
+            //añade el marker
             $this->googlemaps->add_marker($marker);
  
             //podemos colocar iconos personalizados así de fácil
@@ -149,6 +144,19 @@ class Mapa extends CI_Controller {
          $this->load->view('muestraCoche', $arrayArticulo);
       }
    }
+   
+   
+   function parkeasy(){
+       
+        $lat = $this->input->post('latitud');
+        $lng = $this->input->post('longitud');
+        
+        $respuesta = $this->mapa_model->add_marker($lat, $lng);
+        
+
+   }
+   
+   
    
 
 }
