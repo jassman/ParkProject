@@ -59,7 +59,7 @@ $(document).ready(function () {
                 map.setCenter(pos);
             });
         } else {
-            alert("no geo");
+            alert("no geo! ACTUALIZA TU NAVEGADOR!");
         }
         
         var centerControlDiv = document.createElement('div');
@@ -68,7 +68,7 @@ $(document).ready(function () {
         centerControlDiv.index = 1;
         map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(centerControlDiv);
         directionsDisplay.setMap(map);
-        directionsDisplay.setPanel(document.getElementById('mapa-panel'));
+        directionsDisplay.setPanel(document.getElementById("panel-mapa"));
     }
 
     google.maps.event.addDomListener(window, 'load', initialize);
