@@ -1,5 +1,7 @@
 
     var pos;
+    var directionsDisplay;
+    var directionsService = new google.maps.DirectionsService();
 
 $(document).ready(function () {
    
@@ -39,6 +41,8 @@ $(document).ready(function () {
     
 
     function initialize() {
+        
+        directionsDisplay = new google.maps.DirectionsRenderer();
 
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function (position) {
@@ -63,6 +67,8 @@ $(document).ready(function () {
 
         centerControlDiv.index = 1;
         map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(centerControlDiv);
+        directionsDisplay.setMap(map);
+        directionsDisplay.setPanel(document.getElementById('mapa-panel'));
     }
 
     google.maps.event.addDomListener(window, 'load', initialize);

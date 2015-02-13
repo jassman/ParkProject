@@ -152,8 +152,7 @@ class Mapa extends CI_Controller {
         $lng = $this->input->post('longitud');
         
         $respuesta = $this->mapa_model->add_marker($lat, $lng);
-        
-
+       
    }
    
    

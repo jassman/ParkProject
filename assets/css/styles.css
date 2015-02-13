@@ -197,3 +197,13 @@ section {
 .header__title {
   margin: 0;
 }
+
+.mapa{
+    height: 100%;
+    width: 100%;
+}
+
+.panel{
+    background-color: red;
+    height: 50px;
+}
