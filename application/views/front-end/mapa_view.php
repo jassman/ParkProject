@@ -42,7 +42,7 @@
         </script>
         <section>
             <div class="row">
-                <div class="col-s4">
+                <div class="col-s6">
                     <div class="mapa" id="mapa">
                         <?= $map['js'] ?>
                         <?= $map['html'] ?>

@@ -36,7 +36,7 @@ class Login extends CI_Controller {
                                         'pass'=>''.$password.'');
                 
                 $this->session->set_userdata($data_session);
-                redirect(base_url().'index.php/mapa');
+                redirect(base_url().'index.php/profile');
             } else {
                 $data = array('mensaje' => 'El usuario no esta activado, verifique el correo electronico');
                 $this->load->view('plantillas/home_view',$data);

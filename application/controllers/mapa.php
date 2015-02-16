@@ -38,11 +38,12 @@ class Mapa extends CI_Controller {
             $marker ['infowindow_content'] = $info_marker->infowindow;
             //la id del marker
             $marker['id'] = $info_marker->id;
-            //añade el marker
-            $this->googlemaps->add_marker($marker);
- 
+            //la posicion y el id del marker envio a funcion ruta
+            $marker['onclick'] = 'ruta(event.latLng.lat(), event.latLng.lng(),'. $info_marker->id .')';          
             //podemos colocar iconos personalizados así de fácil
-            //$marker ['icon'] = base_url().'imagenes/'.$fila->imagen;
+            $marker ['icon'] = base_url().'assets/img/maps-icon-green.png';
+            //añade el marker
+            $this->googlemaps->add_marker($marker);        
  
             //si queremos que se pueda arrastrar el marker
             //$marker['draggable'] = TRUE;

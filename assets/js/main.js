@@ -40,7 +40,7 @@ $(document).ready(function () {
     }
     
 
-    function initialize() {
+    function mi_marker() {
         
         directionsDisplay = new google.maps.DirectionsRenderer();
 
@@ -71,6 +71,6 @@ $(document).ready(function () {
         directionsDisplay.setPanel(document.getElementById('mapa-panel'));
     }
 
-    google.maps.event.addDomListener(window, 'load', initialize);
+    google.maps.event.addDomListener(window, 'load', mi_marker);
 
 });
