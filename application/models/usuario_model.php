@@ -1,11 +1,4 @@
 <?php
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
  * Description of user_model
  *
@@ -63,7 +56,7 @@ class Usuario_model extends CI_Model {
         $this->email->from('parkeasing@gmail.com', 'Parkeasy Company');
         $this->email->to($this->input->post('email'));
 
-        $this->email->subject('Confirme la Cuenta de Usuario de PARKEASY');
+        $this->email->subject('Confirm account PARKEASY');
         $this->email->message('<h1>Bienvenido: ' . $this->input->post('nombre') . ' ' . $this->input->post('apellido') . '</h1>'
                 . '<p>Para confirmar su registro apriete el siguiente enlace:'
                 . '<a href="' . base_url() . 'login/confirmar/' . $code . '">Enlace de confirmacion</a></p>'
@@ -137,7 +130,7 @@ class Usuario_model extends CI_Model {
 
     // Devuelve el usuario segun su login
     function get_by_username($username) {
-        $query = $this->db->get_where($this->table, array('login' => $username), 1);
+       $query = $this->db->get_where($this->table, array('login' => $username), 1);
         if ($query->num_rows() > 0)
             return $query->row_array();
         return false;
