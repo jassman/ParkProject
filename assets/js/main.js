@@ -45,6 +45,7 @@ $(document).ready(function () {
         directionsDisplay = new google.maps.DirectionsRenderer();
 
         if (navigator.geolocation) {
+            //para ver todo el rato la posicion watchPosition
             navigator.geolocation.getCurrentPosition(function (position) {
 
                 pos = new google.maps.LatLng(position.coords.latitude,

@@ -20,13 +20,17 @@ class Profile extends CI_Controller {
     
     public function index(){
         
+        if (!$this->session->userdata('usuario')){
+            redirect('home', 'refresh');      
+        }else{
+        
         $usuario= $this->session->userdata('usuario');
         
         $datos['datos_usuario'] = $this->usuario_model->get_by_username($usuario);
         $datos['contenido'] = 'profile_view';
         
-        $this->load->view('plantillas/plantilla', $datos);
-        
+        $this->load->view('plantillas/plantilla', $datos);        
+    }
     }
     
 }

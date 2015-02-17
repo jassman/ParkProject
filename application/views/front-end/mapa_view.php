@@ -35,9 +35,7 @@
                     if (status == google.maps.DirectionsStatus.OK) {
                         directionsDisplay.setDirections(response);
                     }
-            });
-                
-
+            });               
             }
         </script>
         <section>
@@ -55,8 +53,6 @@
                     <button class="btn" onclick="add_parkeasy()">Informa de un sitio</button>
                 </div>
             </div>
-
-
             <div class="row">
                 <div class="col s8 offset-s2">
                     <ul>

@@ -14,8 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/parkeasing';
-
+$config['base_url']	= 'http://localhost:8080/parkeasing';
 /*
 |--------------------------------------------------------------------------
 | Index File

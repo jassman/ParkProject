@@ -30,7 +30,6 @@ class Login extends CI_Controller {
         
         if ($valid_login) {
             //$estado = $this->usuario_model->is_active($username,$password);
-            
              $data_session = array('usuario'=>''.$username.'',
                                       'pass'=>''.$password.'');
                 
