@@ -44,9 +44,6 @@ class Mapa extends CI_Controller {
             $marker ['icon'] = base_url().'assets/img/maps-icon-green.png';
             //añade el marker
             $this->googlemaps->add_marker($marker);        
- 
-            //si queremos que se pueda arrastrar el marker
-            //$marker['draggable'] = TRUE;
         }
         
         $data = $this->mapa_model->get_markers();
@@ -63,7 +60,6 @@ class Mapa extends CI_Controller {
         $datos['datos_usuario'] = $this->usuario_model->get_by_username($usuario);
 
         $this->load->view('plantillas/plantilla', $datos);
-        
         
     }
     

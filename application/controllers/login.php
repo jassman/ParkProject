@@ -29,18 +29,24 @@ class Login extends CI_Controller {
         $valid_login = $this->usuario_model->is_valid_user($username,$password);
         
         if ($valid_login) {
-            $estado = $this->usuario_model->is_active($username,$password);
+            //$estado = $this->usuario_model->is_active($username,$password);
             
-            if($estado) {
-                $data_session = array('usuario'=>''.$username.'',
-                                        'pass'=>''.$password.'');
+             $data_session = array('usuario'=>''.$username.'',
+                                      'pass'=>''.$password.'');
                 
-                $this->session->set_userdata($data_session);
-                redirect(base_url().'index.php/profile');
-            } else {
-                $data = array('mensaje' => 'El usuario no esta activado, verifique el correo electronico');
-                $this->load->view('plantillas/home_view',$data);
-            }
+               $this->session->set_userdata($data_session);
+               redirect(base_url().'index.php/profile');
+            
+//            if($estado) {
+//                $data_session = array('usuario'=>''.$username.'',
+//                                        'pass'=>''.$password.'');
+//                
+//                $this->session->set_userdata($data_session);
+//                redirect(base_url().'index.php/profile');
+//            } else {
+//                $data = array('mensaje' => 'El usuario no esta activado, verifique el correo electronico');
+//                $this->load->view('plantillas/home_view',$data);
+//            }
         } else {
             $data = array('mensaje' => 'El nombre de usuario o contraseña son incorrectos');
             $this->load->view('plantillas/home_view',$data);

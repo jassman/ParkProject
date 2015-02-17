@@ -10,21 +10,24 @@ class Mapa_model extends CI_Model {
     }
 
     public function get_markers() {
+        //Cogemos todas las marcas de la tabla mapa
         $markers = $this->db->get('mapa');
+        //Si devuelve alguna fila
         if ($markers->num_rows() > 0) {
+            //Devolvemos los markers
             return $markers->result();
+        }else{
+            alert("No hay datos de merkers");
         }
     }
 
     public function add_marker($lat, $lng) {
-        
+        //Dattos en array para insertar en las columnas
         $data = array(
                 'pos_x' => $lng,
                 'pos_y' => $lat
                 );
         //aqui se realiza la inserción, si queremos devolver algo deberíamos usar delantre return
-        //y en el controlador despues de $nueva_insercion poner lo que queremos hacer, redirigir,
-        //envíar un email, en fin, lo que deseemos hacer
         $this->db->insert('mapa',$data);
     }
 
