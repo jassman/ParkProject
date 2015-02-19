@@ -1,10 +1,9 @@
 
-    var pos;
-    var directionsDisplay;
-    var directionsService = new google.maps.DirectionsService();
+var pos;
+var directionsDisplay;
+var directionsService = new google.maps.DirectionsService();
 
 $(document).ready(function () {
-   
 
     function CenterControl(controlDiv, map) {
 
@@ -31,22 +30,20 @@ $(document).ready(function () {
         controlText.innerHTML = 'Center Map';
         controlUI.appendChild(controlText);
 
-        // Setup the click event listeners: simply set the map to
-        // Chicago
+        // Inicializa el evente del boton y le da la funcion de poner el mapa en el centro de pos
         google.maps.event.addDomListener(controlUI, 'click', function () {
             map.setCenter(pos);
         });
 
     }
-    
 
     function mi_marker() {
-        
+
         directionsDisplay = new google.maps.DirectionsRenderer();
 
         if (navigator.geolocation) {
             //para ver todo el rato la posicion watchPosition
-            navigator.geolocation.getCurrentPosition(function (position) {
+            navigator.geolocation.watchPosition(function (position) {
 
                 pos = new google.maps.LatLng(position.coords.latitude,
                         position.coords.longitude);
@@ -56,13 +53,13 @@ $(document).ready(function () {
                     map: map
                 });
 
-                
+
                 map.setCenter(pos);
             });
         } else {
             alert("no geo! ACTUALIZA TU NAVEGADOR!");
         }
-        
+
         var centerControlDiv = document.createElement('div');
         var centerControl = new CenterControl(centerControlDiv, map);
 
@@ -71,6 +68,8 @@ $(document).ready(function () {
         directionsDisplay.setMap(map);
         directionsDisplay.setPanel(document.getElementById("panel-mapa"));
     }
+
+
 
     google.maps.event.addDomListener(window, 'load', mi_marker);
 

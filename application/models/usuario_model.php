@@ -131,9 +131,11 @@ class Usuario_model extends CI_Model {
     // Devuelve el usuario segun su login
     function get_by_username($username) {
        $query = $this->db->get_where($this->table, array('login' => $username), 1);
-        if ($query->num_rows() > 0)
+        if ($query->num_rows() > 0){
             return $query->row_array();
-        return false;
+        }else{
+            return false;
+        }
     }
 
     //Mete el login en session

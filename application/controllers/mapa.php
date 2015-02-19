@@ -42,6 +42,8 @@ class Mapa extends CI_Controller {
             $marker ['infowindow_content'] = $info_marker->infowindow;
             //la id del marker
             $marker['id'] = $info_marker->id;
+            //Usuario del marker
+            $marker['id_usuario'] = $info_marker->id_usuario;
             //la posicion y el id del marker envio a funcion ruta
             $marker['onclick'] = 'ruta(event.latLng.lat(), event.latLng.lng(),'. $info_marker->id .')';          
             //podemos colocar iconos personalizados así de fácil
@@ -94,10 +96,16 @@ class Mapa extends CI_Controller {
         }else{
         $lat = $this->input->post('latitud');
         $lng = $this->input->post('longitud');
+        $id_usuario = $this->session->userdata('id');
         
-        $this->mapa_model->add_marker($lat, $lng);
+        $can_put_markers = $this->mapa_model->add_marker($lat, $lng, $id_usuario);
         }
-       
+        if ($can_put_markers){
+            echo json_encode($can_put_markers);
+        }else{
+            echo json_encode($can_put_markers);
+        }
+        
    }
    
    

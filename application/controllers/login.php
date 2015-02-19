@@ -30,8 +30,10 @@ class Login extends CI_Controller {
         
         if ($valid_login) {
             //$estado = $this->usuario_model->is_active($username,$password);
+             $usuario = $this->usuario_model->get_by_username($username);
              $data_session = array('usuario'=>''.$username.'',
-                                      'pass'=>''.$password.'');
+                                      'pass'=>''.$password.'',
+                                        'id'=>''.$usuario[id].'');
                 
                $this->session->set_userdata($data_session);
                redirect(base_url().'index.php/profile');
