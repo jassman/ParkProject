@@ -146,6 +146,9 @@ a {
 
 button{
     width: 100%;
+    text-align: center;
+    padding-left: 0px!important;
+    padding-right: 0px!important;
 }
 
 button a {
@@ -210,6 +213,16 @@ mapa-ruta{
 }
 
 .panel{
-    overflow: hidden;
+    overflow: scroll;
     max-height: 500px;
+}
+
+
+.profile{
+    border: 2px solid black;
+}
+
+.profile-text{
+    text-align: center;
+    margin: 20px;
 }

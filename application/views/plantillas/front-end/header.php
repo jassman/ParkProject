@@ -16,13 +16,13 @@
     <body>
         <div id="wrapper" class="row wrapper">
             <header class="row header">
-                <div class="col m8 offset-m2">
+                <div class="col m8 col s8 offset-m2 offset-s2 header_parkeasy">
                     <h1>Parkeasy</h1>
                 </div>
-                <div class="col m2">
-                    <!-- Dropdown Trigger -->
+<!--                <div class="col m2 s2">
+                     Dropdown Trigger 
                     <a class='dropdown-button' href='#' data-activates='dropdown1'><i class="mdi-navigation-more-vert"></i></a>
-                    <!-- Dropdown Structure -->
+                     Dropdown Structure 
                     <ul id='dropdown1' class='dropdown-content'>
                         <li><a href="#!">Opciones</a></li>
                         <li><a href="#!">GPS</a></li>
@@ -30,5 +30,5 @@
                         <li><a href="#!">Reportar un error</a></li>
                         <li><a href="#!">Salir</a></li>
                     </ul>
-                </div>
+                </div>-->
             </header>

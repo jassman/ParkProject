@@ -101,14 +101,10 @@ class Mapa extends CI_Controller {
         $can_put_markers = $this->mapa_model->add_marker($lat, $lng, $id_usuario);
         }
         if ($can_put_markers){
-            echo json_encode($can_put_markers);
+            echo "Añadido correctamente";
         }else{
-            echo json_encode($can_put_markers);
+            echo "No puedes añadir mas";
         }
-        
    }
    
-   
-   
-
 }

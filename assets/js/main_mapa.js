@@ -10,6 +10,11 @@ function datos_marker(lat, lng, marker) {
     google.maps.event.trigger(marker, 'click');
 }
 
+function confirm_add_parkeasy() {
+    toast('<span>Añadir sitio</span><a class="btn-flat blue-text" href="#" onclick="add_parkeasy()">Confirmar<a>', 3000);
+}
+
+
 function add_parkeasy() {
 
     var latitud = pos.lat();
@@ -20,11 +25,7 @@ function add_parkeasy() {
             {'latitud': latitud, 'longitud': longitud}
     )
             .done(function (data) {
-                if (data == true){
-                    alert("database updated");
-                }else{
-                alert("No puedes poner mas puntos");
-            }
+                toast(data, 4000);
             });
 }
 
@@ -42,4 +43,14 @@ function ruta(lat, lng, marker) {
             directionsDisplay.setDirections(response);
         }
     });
+}
+
+function ruta_toggle() {
+    $("#panel-mapa").toggle();
+    
+    if ($("#boton_ruta").text() == "VER RUTA") {
+        $("#boton_ruta").text("OCULTAR RUTA");
+    } else {
+        $("#boton_ruta").text("VER RUTA");        
+    }
 }
