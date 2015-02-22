@@ -7,7 +7,7 @@ and open the template in the editor.
     Created on : 06-ene-2015, 23:19:43
     Author     : asus-pc
 */
-html,body{
+/*html,body{
     width: 100%;
     height: 100%;
 }
@@ -24,12 +24,13 @@ iframe{
     height: 200px;
     text-align:center;
     z-index: 5;
+    background-color: red;
 }
 
 .portada-inicio h1{
     margin:auto;
     vertical-align:middle;
-    color: white;
+    color: black;
 }
 
 .boton-inicio{
@@ -39,13 +40,97 @@ iframe{
 }
 
 .contenedor-botones-inicio{
-    margin-top: 20%;
+    background-color: red;
 }
 
 a{
     background-color:#FFC107;
+    width: 100%;
 }
 
 .modal-activar{
     background-color: #03A9F4;
+    width: 100%;
+}*/
+
+
+
+body{
+    background: #03A9F4;
 }
+
+h1{
+    font-family: 'Oleo Script', cursive;
+    margin-top: 0;
+    margin-left: 30px;
+    color:#03A9F4;
+    font-size: 40px;
+    -webkit-text-fill-color: #03A9F4;
+    -webkit-text-stroke: 1px black;
+}
+
+h1 span{
+    background: transparent;
+}
+
+.main-log{
+    margin-top: 60px;
+}
+
+.title{
+    margin-top: 20px;
+    //background-color: #4fc3f7;
+}
+
+.title div {
+    height: 70px;
+}
+
+.form-login{
+    background-color: transparent;
+    border-radius: 10px;
+    border: 1px solid black;
+    
+}
+
+.form-login form{
+    margin-top: 10px;             
+}
+
+.form-login .form-input{
+    padding-left: 5px;
+    height: 30px;
+    background-color: white;
+    border-radius: 5px;
+    border-bottom: none;
+}
+
+.form-login .form-input:focus{
+    border-bottom: none;
+    border: 1px solid black;
+}
+
+.form-login label{
+    color: black;
+}
+
+.form-login button {
+    padding: 0;
+    width: 100%;
+    opacity: 0.9;
+    color: black;
+}
+
+form .btn-foto{
+    padding: 0;
+    font-size: 12px;
+}
+
+#modal_registrar{
+    background-color: #b3e5fc;
+}
+
+.modal-registrar{
+    margin: 20px;
+}
+

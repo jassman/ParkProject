@@ -31,6 +31,8 @@ class Mapa_model extends CI_Model {
                 if ($columna->id_usuario == $id_usuario) {
                     $coincide++;
                 }
+            }else{
+                 $coincide = 0;
             }
         }
 

@@ -6,9 +6,9 @@
         <link href="<?php echo base_url(); ?>assets/css/home_style.css" rel="stylesheet" type="text/css">
     </head>
     <body>
-                <iframe id="video-background"
+<!--            <iframe id="video-background"
                         src="http://www.youtube.com/embed/BlYD_WYuGuc?rel=0&controls=0&showinfo=0&autoplay=1&html5=1&allowfullscreen=true&wmode=transparent&loop=1&playlist=BlYD_WYuGuc" 
-                        frameborder="0" allowfullscreen></iframe>
+                        frameborder="0" allowfullscreen></iframe>-->
             <section class="row portada-inicio">
                 <div class="col s8 offset-s2">
                     <h1>PARKEASY</h1>
@@ -30,11 +30,11 @@
                 </div>
             </section>    
             <section class="row contenedor-botones-inicio">
-                <div class="col s8 m6 l4 offset-s2 offset-m3 offset-l4">
+                <div class="col s8 m4 l4 offset-s2 offset-m4 offset-l4">
                     <div class="row">
-                        <div class="col s8 m6 l4 offset-s2 offset-m3 offset-l4">
-                            <a class="waves-effect waves-light btn-large boton-inicio modal-activar" href="#modal_entrar">Entrar</a>
-                            <a class="waves-effect waves-light btn-large boton-inicio modal-activar" href="#modal_registrar">Registrarse</a>
+                        <div class="col s12 m12 l12">
+                            <a class="waves-effect waves-light btn boton-inicio modal-activar" href="#modal_entrar">Entrar</a>
+                            <a class="waves-effect waves-light btn boton-inicio modal-activar" href="#modal_registrar">Registrarse</a>
                             <div id="modal_registrar" class="modal">
                                 <form class="form-horizontal" method="post" enctype="multipart/form-data" action="<?php echo site_url('login/register'); ?>">
                                     <div class="row">
@@ -106,7 +106,7 @@
  
 
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <script type="text/javascript"  src="<?php echo base_url(); ?>assets/js/materialize.js"></script> 
+        <script type="text/javascript"  src="<?php echo base_url(); ?>assets/js/external/materialize.js"></script> 
         <script>
 
             $(document).ready(function() {
@@ -117,9 +117,8 @@
                     $("#nombre").val(importes);
                     var yes = document.getElementById('nombre').value;
                 });
-
+                
             });
-
 
         </script>
     </body>

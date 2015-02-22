@@ -53,11 +53,10 @@ $(document).ready(function () {
                     map: map
                 });
 
-
-                map.setCenter(pos);
+               // map.setCenter(pos); //Centra el mapa (cada vez que hay una nueva geolocalizacio (MOLESTO!!)
             });
         } else {
-            alert("no geo! ACTUALIZA TU NAVEGADOR!");
+            alert("no geo! ACTUALIZA TU NAVEGADOR! o  descargate CHROME que es gratis!");
         }
 
         var centerControlDiv = document.createElement('div');

@@ -34,7 +34,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col s12 col m8 col l8  offset-l2 offset-m2 offset-s2 panel" id="panel-mapa"></div>
+                <div class="col s12 col m8 col l8  offset-l2 offset-m2 panel" id="panel-mapa"></div>
             </div>
         </section>
     </div>

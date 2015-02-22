@@ -31,11 +31,11 @@ function add_parkeasy() {
 
 function ruta(lat, lng, marker) {
 
-    var mi_marker = new google.maps.LatLng(lat, lng);
+    var destino = new google.maps.LatLng(lat, lng);
 
     var request = {
         origin: pos,
-        destination: mi_marker,
+        destination: destino,
         travelMode: google.maps.TravelMode.DRIVING
     };
     directionsService.route(request, function (response, status) {
