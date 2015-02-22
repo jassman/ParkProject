@@ -50,7 +50,7 @@ class Login extends CI_Controller {
 //            }
         } else {
             $data = array('mensaje' => 'El nombre de usuario o contraseña son incorrectos');
-            $this->load->view('plantillas/home_view_prueba',$data);
+            $this->load->view('plantillas/home_view',$data);
         }
     }
 
@@ -80,7 +80,7 @@ class Login extends CI_Controller {
         }
            
         $data = array('mensaje'=>$mensaje);
-        $this->load->view('plantillas/home_view_prueba',$data);                    
+        $this->load->view('plantillas/home_view',$data);                    
         
     }
     
@@ -102,14 +102,14 @@ class Login extends CI_Controller {
         $this->session->sess_destroy();
         $mensaje = "Has salido del sistema";
         $data = array('mensaje'=>$mensaje);
-        $this->load->view('plantillas/home_view_prueba', $data);
+        $this->load->view('plantillas/home_view', $data);
 
     }
 
     // noaccess to show no access message
     public function noaccess() {
         $this->data['login_error'] = 'You do not have access or your login has expired.';
-        $this->load->view('front-end/home_view_prueba', $this->data);
+        $this->load->view('front-end/home_view', $this->data);
     }
     
     

@@ -12,13 +12,13 @@
             </div>
             <div class="row">
                 <div class="col s4">
-                    <button class="btn waves-effect waves-light tooltipped" data-position="top" data-delay="50" data-tooltip="Añade un sitio en el mapa" onclick="confirm_add_parkeasy()">PARKEASY</button>
+                    <button class="btn waves-effect waves-light light-blue tooltipped" data-position="top" data-delay="50" data-tooltip="Añade un sitio en el mapa" onclick="confirm_add_parkeasy()">PARKEASY</button>
                 </div>
                 <div class="col s4">
-                    <button class="btn waves-effect waves-light tooltipped" data-position="top" data-delay="50" data-tooltip="Refresca el mapa"><a href="mapa">RECARGAR</a></button>
+                    <button class="btn waves-effect waves-light light-blue tooltipped" data-position="top" data-delay="50" data-tooltip="Refresca el mapa"><a href="mapa">RECARGAR</a></button>
                 </div>
                 <div class="col s4">
-                    <button class="btn waves-effect waves-light tooltipped" id="boton_ruta" data-position="top" data-delay="50" data-tooltip="Muestra u oculta" onclick="ruta_toggle()">OCULTAR RUTA</button>
+                    <button class="btn waves-effect waves-light light-blue tooltipped" id="boton_ruta" data-position="top" data-delay="50" data-tooltip="Muestra u oculta" onclick="ruta_toggle()">OCULTAR RUTA</button>
                 </div>
             </div>
             <div class="row">

@@ -18,7 +18,7 @@
       </li>
       <li class="mm-menu__item">
         <a class="mm-menu__link" href="mapa">
-          <span class="mm-menu__link-text"><i class="mdi-action-room"></i> Encuestra Sitio</span>
+          <span class="mm-menu__link-text"><i class="mdi-action-room"></i> Encuentra Sitio</span>
         </a>
       </li>
       <li class="mm-menu__item">

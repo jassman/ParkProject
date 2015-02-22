@@ -4,57 +4,9 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
 /* 
-    Created on : 06-ene-2015, 23:19:43
+    Created on : 16-ene-2015, 23:19:43
     Author     : asus-pc
 */
-/*html,body{
-    width: 100%;
-    height: 100%;
-}
-
-iframe{
-    width: 100%;
-    height: 100%;
-    z-index: -5;
-    position: absolute;
-    top: 0;
-}
-
-.portada-inicio{ 
-    height: 200px;
-    text-align:center;
-    z-index: 5;
-    background-color: red;
-}
-
-.portada-inicio h1{
-    margin:auto;
-    vertical-align:middle;
-    color: black;
-}
-
-.boton-inicio{
-    margin: 0 auto;
-    width: 200px;;
-    margin-top: 5px;
-}
-
-.contenedor-botones-inicio{
-    background-color: red;
-}
-
-a{
-    background-color:#FFC107;
-    width: 100%;
-}
-
-.modal-activar{
-    background-color: #03A9F4;
-    width: 100%;
-}*/
-
-
-
 body{
     background: #03A9F4;
 }
@@ -62,7 +14,7 @@ body{
 h1{
     font-family: 'Oleo Script', cursive;
     margin-top: 0;
-    margin-left: 30px;
+    margin-left: 15%;
     color:#03A9F4;
     font-size: 40px;
     -webkit-text-fill-color: #03A9F4;
@@ -75,6 +27,11 @@ h1 span{
 
 .main-log{
     margin-top: 60px;
+}
+
+.main-log img {
+    max-height: 550px;
+    margin-left: 30px;
 }
 
 .title{
@@ -125,6 +82,9 @@ form .btn-foto{
     padding: 0;
     font-size: 12px;
 }
+form .btn-foto input{
+    background-color: transparent; border: none;
+}
 
 #modal_registrar{
     background-color: #b3e5fc;
@@ -132,5 +92,13 @@ form .btn-foto{
 
 .modal-registrar{
     margin: 20px;
+}
+
+div.error{
+     float: none; 
+     color: red; 
+     padding-left: .5em; 
+     vertical-align: middle; 
+     font-size: 12px; 
 }
 
