@@ -17,7 +17,7 @@ class Usuario_model extends CI_Model {
     public function add_user($image) {
 
         $code = rand(1000, 99999);
-        $code = $code.$this->input->post('user');
+//        $code = $code.$this->input->post('user');
         $user = array(
             'nombre' => filter_input(INPUT_POST, 'nombre'),
             'apellido' => filter_input(INPUT_POST, 'apellido'),
@@ -59,7 +59,7 @@ class Usuario_model extends CI_Model {
         $this->email->subject('Confirm account PARKEASY');
         $this->email->message('<h1>Bienvenido: ' . $this->input->post('nombre') . ' ' . $this->input->post('apellido') . '</h1>'
                 . '<p>Para confirmar su registro apriete el siguiente enlace:'
-                . '<a href="' . base_url() . 'login/confirmar/' . $code . '">Enlace de confirmacion</a></p>'
+                . '<a href="' . base_url() . 'index.php/login/confirmar/' . $code . '">Enlace de confirmacion</a></p>'
                 . '<h3>Gracias por registrarte</h3>');
 
         $this->email->send();
@@ -67,7 +67,8 @@ class Usuario_model extends CI_Model {
 
     //verifica si el codigo es correcto
     function is_code($valor, $columna) {
-        $query = $this->db->get_where('usuario', array($columna, $valor));
+        $prepare_query = "select id from usuario where codigo =".$valor;
+        $query = $this->db->query($prepare_query);
         if ($query->num_rows() == 1) {
             return true;
         } else {
@@ -108,8 +109,8 @@ class Usuario_model extends CI_Model {
 
     //Cambia el usuario a activo 
     function update_estado_user($code) {
-        $this->db->where('codigo', $code);
-        $this->db->where('usuario', array('estado' => '1'));
+        $sql = "UPDATE usuario SET estado = 2 WHERE codigo=".$code;
+        $this->db->query($sql);
     }
 
     //Guarda un usuario

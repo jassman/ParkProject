@@ -69,6 +69,7 @@ h1 span{
 
 .form-login label{
     color: black;
+    font-size: 15px;
 }
 
 .form-login button {

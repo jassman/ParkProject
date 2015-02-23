@@ -23,31 +23,32 @@ class Login extends CI_Controller {
 
     public function index() {
         
+        
+        
         $username = $this->input->post('login');
         $password = $this->input->post('password');
         
         $valid_login = $this->usuario_model->is_valid_user($username,$password);
         
         if ($valid_login) {
-            //$estado = $this->usuario_model->is_active($username,$password);
-             $usuario = $this->usuario_model->get_by_username($username);
-             $data_session = array('usuario'=>''.$username.'',
-                                      'pass'=>''.$password.'',
-                                        'id'=>''.$usuario[id].'');
-                
-               $this->session->set_userdata($data_session);
-               redirect(base_url().'index.php/profile');
-            
-//            if($estado) {
-//                $data_session = array('usuario'=>''.$username.'',
-//                                        'pass'=>''.$password.'');
+//             $usuario = $this->usuario_model->get_by_username($username);
+//             $data_session = array('usuario'=>''.$username.'',
+//                                      'pass'=>''.$password.'',
+//                                        'id'=>''.$usuario[id].'');
 //                
-//                $this->session->set_userdata($data_session);
-//                redirect(base_url().'index.php/profile');
-//            } else {
-//                $data = array('mensaje' => 'El usuario no esta activado, verifique el correo electronico');
-//                $this->load->view('plantillas/home_view',$data);
-//            }
+//               $this->session->set_userdata($data_session);
+//               redirect(base_url().'index.php/profile');
+            $estado = $this->usuario_model->is_active($username,$password);
+            if($estado) {
+                $data_session = array('usuario'=>''.$username.'',
+                                        'pass'=>''.$password.'');
+                
+                $this->session->set_userdata($data_session);
+                redirect(base_url().'index.php/profile');
+            } else {
+                $data = array('mensaje' => 'El usuario no esta activado, verifique el correo electronico');
+                $this->load->view('plantillas/home_view',$data);
+            }
         } else {
             $data = array('mensaje' => 'El nombre de usuario o contraseña son incorrectos');
             $this->load->view('plantillas/home_view',$data);
@@ -88,12 +89,14 @@ class Login extends CI_Controller {
         
         $verificacion = $this->usuario_model->is_code($code, 'codigo');
         if ($verificacion == false){
-            echo "Este Usuario No Existe";
+            $mensaje = "El codigo de verificacion no es valido.";
         } else {
             $this->usuario_model->update_estado_user($code);
-            echo "Usuario Confirmado Con Exito.<br>"
-            . "<a href='".base_url()."login'>Iniciar Sesion</a>";
+            $mensaje = "Usuario Confirmado Con Exito.";
         }
+        
+        $data = array('mensaje'=>$mensaje);
+        $this->load->view('plantillas/home_view',$data);
         
     }
     // route /logout -- check settings in /application/config/routes.php
