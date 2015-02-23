@@ -100,6 +100,7 @@ body {
   font-size: 16px;
   font-weight: 300;
   line-height: 1.6;
+
 }
 
 body.mm-menu-open {
@@ -201,6 +202,11 @@ section {
 .header__title {
   margin: 0;
 }
+/* =============================================================================
+  MAPA_VIEW
+============================================================================= */
+
+
 
 mapa-ruta{
     height: 500px;
@@ -214,9 +220,36 @@ mapa-ruta{
 
 .panel{
     overflow: scroll;
-    max-height: 500px;
+    max-height: 500px;  
 }
 
+::-webkit-scrollbar {
+    margin-right: 5px;
+    background-color: #e1f5fe;
+    width: 9px;
+}
+::-webkit-scrollbar-track {
+    box-shadow: 0 0 2px rgba(0,0,0,0.3);
+}
+::-webkit-scrollbar-thumb {
+    border: 1px #eee solid;
+    border-radius: 12px;
+    background: #b3e5fc;
+    box-shadow: 0 0 8px rgba(0,0,0,0.3) inset;
+    -webit-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+}
+::-webkit-scrollbar-thumb:window-inactive {
+    background: #bbb;
+    box-shadow: 0 0 8px rgba(0,0,0,0.3) inset;
+}
+::-webkit-scrollbar-thumb:hover { 
+	background: #03A9F4; 
+}
+
+/* =============================================================================
+  PROFILE_VIEW
+============================================================================= */
 
 .profile{
     border: 2px solid black;

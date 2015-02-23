@@ -40,8 +40,8 @@
   <script type="text/javascript"  src="<?php echo base_url(); ?>assets/js/external/materialize.js"></script> 
   <script type="text/javascript"  src="<?php echo base_url(); ?>assets/js/materialMenu.js"></script> 
   <script type="text/javascript"  src="<?php echo base_url(); ?>assets/js/scripts.js"></script> 
-  <script type="text/javascript"  src="<?php echo base_url(); ?>assets/js/main.js"></script> 
-  <script type="text/javascript"  src="<?php echo base_url(); ?>assets/js/mapa.js"></script> 
+  <script type="text/javascript"  src="<?php echo base_url(); ?>assets/js/mapa_main.js"></script> 
+  <script type="text/javascript"  src="<?php echo base_url(); ?>assets/js/mapa_prueba.js"></script> 
   <script>
     var menu = new Menu;
   </script>

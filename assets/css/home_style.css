@@ -26,7 +26,7 @@ h1 span{
 }
 
 .main-log{
-    margin-top: 60px;
+    margin-top: 40px;
 }
 
 .main-log img {
@@ -47,7 +47,6 @@ h1 span{
     background-color: transparent;
     border-radius: 10px;
     border: 1px solid black;
-    
 }
 
 .form-login form{
@@ -96,10 +95,19 @@ form .btn-foto input{
 }
 
 div.error{
-     float: none; 
+     position: absolute;
      color: red; 
-     padding-left: .5em; 
+     margin-left: 150px;
+     margin-top: -65px;
      vertical-align: middle; 
      font-size: 12px; 
 }
 
+.efecto-blur{
+    position: absolute;
+    height: 217px;
+    width: 100px;
+    background:rgba(255,255,255,0.4);
+    z-index: -5;
+    border-radius: 10px;
+}

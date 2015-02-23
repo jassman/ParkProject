@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/styles.css">
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/stylemenu.css">
         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&sensor=true"></script>
-        <script type="text/javascript"  src="<?php echo base_url(); ?>assets/js/main_mapa.js"></script>
+        <script type="text/javascript"  src="<?php echo base_url(); ?>assets/js/mapa_functions.js"></script>
     </head>
     <body>
         <div id="wrapper" class="row wrapper">

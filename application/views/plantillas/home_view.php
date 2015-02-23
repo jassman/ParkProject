@@ -31,15 +31,16 @@
             </div>    
         </div>
         <section class="row main-log">
-            <div class="col m4 l4 offset-m2 offset-l2 hide-on-small-only nexus">
+            <div class="col m3 l4 offset-m1 offset-l2 hide-on-small-only nexus">
                 <img class="responsive-img image" src="<?php echo base_url(); ?>assets/img/backgrounds/iphone.png" alt="">
             </div>
-            <div class="col s10 m4 l4 offset-s1 form-login">
+            <div class="col s10 m6 l4 offset-s1 offset-m5 offset-l6 efecto-blur"></div>
+            <div class="col s10 m6 l4 offset-s1 offset-m1 form-login">
                 <form class="form-horizontal" id="form-entrar" method="post" enctype="multipart/form-data" action="<?php echo site_url('login'); ?>">
                     <div class="row">
                         <div class="col s12">
                             <label for="login">Login:</label>
-                            <input type="text" class="form-input" id="login" name="login" required value="<?php echo set_value('login'); ?>">
+                            <input type="text" class="form-input" id="login" name="login" required value="">
                         </div> 
                         <div class="col s12">
                             <label for="password">Password:</label>
@@ -56,11 +57,11 @@
                 <div id="modal_registrar" class="modal">
                     <form class="form-horizontal" novalidate="novalidate" id="form-registro" method="post" enctype="multipart/form-data" action="<?php echo site_url('login/register'); ?>">
                         <div class="row modal-registrar">
-                            <div class="col s6">
+                            <div class="col s12">
                                 <label for="nombre">Nombre:</label>
                                 <input type="text" class="form-input" id="nombre" name="nombre" required value="<?php echo set_value('nombre'); ?>">
                             </div>
-                            <div class="col s6">
+                            <div class="col s12">
                                 <label for="apellido">Apellido:</label>
                                 <input type="text" class="form-input" id="apellido" name="apellido" required value="<?php echo set_value('apellido'); ?>">
                             </div>

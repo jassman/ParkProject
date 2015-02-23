@@ -21,10 +21,6 @@ $(document).ready(function() {
 //        $(".dw-content").css("display","block");
 //        
 //    });
-//    
-    
-    
-    
     
 });
 
