@@ -1,5 +1,6 @@
 
 var pos;
+var miMarker = 0;
 var directionsDisplay;
 var directionsService = new google.maps.DirectionsService();
 
@@ -43,24 +44,8 @@ $(document).ready(function () {
 
         if (navigator.geolocation) {
             //para ver todo el rato la posicion watchPosition
-            navigator.geolocation.watchPosition(function (position) {
-
-                pos = new google.maps.LatLng(position.coords.latitude,
-                        position.coords.longitude);
-                        
-                miMarker;
-                
-                if(!miMarker){
-                var miMarker = new google.maps.Marker({
-                    position: pos,
-                    map: map
-                });
-            }else{
-                miMarker.setPosition(pos);
-            }
-
-                map.setCenter(pos); //Centra el mapa (cada vez que hay una nueva geolocalizacio (MOLESTO!!)
-            });
+            navigator.geolocation.watchPosition(getPosition, errorGettingPosition,
+            {'enableHighAccuracy':true,'timeout':10000,'maximumAge':0});
         } else {
             alert("no geo! ACTUALIZA TU NAVEGADOR! o  descargate CHROME que es gratis!");
         }
@@ -73,8 +58,6 @@ $(document).ready(function () {
         directionsDisplay.setMap(map);
         directionsDisplay.setPanel(document.getElementById("panel-mapa"));
     }
-
-
 
     google.maps.event.addDomListener(window, 'load', mi_marker);
     

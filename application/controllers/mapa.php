@@ -31,8 +31,7 @@ class Mapa extends CI_Controller {
         
         $markers = $this->mapa_model->get_markers();
         
-        foreach($markers as $info_marker)
-        {
+        foreach($markers as $info_marker) {
             $marker = array();
             //podemos elegir DROP o BOUNCE
             $marker ['animation'] = 'DROP';
@@ -54,8 +53,6 @@ class Mapa extends CI_Controller {
         
         $data = $this->mapa_model->get_markers();
 
-        // set up the marker ready for positioning 
-        // once we know the users location
         $marker = array();
         $this->googlemaps->add_marker($marker);
         
