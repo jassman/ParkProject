@@ -47,11 +47,17 @@ $(document).ready(function () {
 
                 pos = new google.maps.LatLng(position.coords.latitude,
                         position.coords.longitude);
-
+                        
+                miMarker;
+                
+                if(!miMarker){
                 var miMarker = new google.maps.Marker({
                     position: pos,
                     map: map
                 });
+            }else{
+                miMarker.setPosition(pos);
+            }
 
                 map.setCenter(pos); //Centra el mapa (cada vez que hay una nueva geolocalizacio (MOLESTO!!)
             });
