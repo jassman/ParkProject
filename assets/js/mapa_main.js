@@ -1,8 +1,13 @@
 
 var pos;
 var miMarker = 0;
-var directionsDisplay;
+var getCenterMap = true;
 var directionsService = new google.maps.DirectionsService();
+var directionsDisplay = new google.maps.DirectionsRenderer();
+var lng_destino = null;
+var lat_destino = null;
+var id_marker_destino = null;
+
 
 $(document).ready(function () {
 
@@ -31,7 +36,7 @@ $(document).ready(function () {
         controlText.innerHTML = 'Center Map';
         controlUI.appendChild(controlText);
 
-        // Inicializa el evente del boton y le da la funcion de poner el mapa en el centro de pos
+        // Inicializa el event del boton y le da la funcion de poner el mapa en el centro de pos
         google.maps.event.addDomListener(controlUI, 'click', function () {
             map.setCenter(pos);
         });
@@ -39,17 +44,13 @@ $(document).ready(function () {
     }
 
     function mi_marker() {
-
-        directionsDisplay = new google.maps.DirectionsRenderer();
-
+        
         if (navigator.geolocation) {
             //para ver todo el rato la posicion watchPosition
             navigator.geolocation.watchPosition(getPosition, errorGettingPosition,
             {'enableHighAccuracy':true,'timeout':10000,'maximumAge':0});
-        } else {
-            alert("no geo! ACTUALIZA TU NAVEGADOR! o  descargate CHROME que es gratis!");
         }
-
+        
         var centerControlDiv = document.createElement('div');
         var centerControl = new CenterControl(centerControlDiv, map);
 

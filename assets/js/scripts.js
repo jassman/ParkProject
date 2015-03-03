@@ -14,6 +14,10 @@ $(document).ready(function() {
         constrain_width: true
     });
     
+    $('.collapsible').collapsible({
+      accordion : false 
+    });
+    
     
 //    $(".btn-opciones").click(function(){
 //       

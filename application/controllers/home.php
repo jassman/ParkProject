@@ -11,5 +11,4 @@ class Home extends CI_Controller {
 		$this->load->view('plantillas/home_view');
     }
     
-    
 }

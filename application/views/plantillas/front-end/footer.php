@@ -22,7 +22,7 @@
         </a>
       </li>
       <li class="mm-menu__item">
-        <a class="mm-menu__link" href="foro">
+        <a class="mm-menu__link" href="comunidad">
           <span class="mm-menu__link-text"><i class="mdi-action-account-child"></i> Foro</span>
         </a>
       </li>

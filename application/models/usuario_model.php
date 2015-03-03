@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Description of user_model
  *
@@ -44,8 +45,8 @@ class Usuario_model extends CI_Model {
         $config['newline'] = "\r\n";
         $config['mailtype'] = 'html';
         $config['protocol'] = 'smtp';
-        $config['smtp_host'] = 'ssl://smtp.googlemail.com' ; //'ssl://smtp.googlemail.com';
-        $config['smtp_port'] = 465;//465
+        $config['smtp_host'] = 'ssl://smtp.googlemail.com'; //'ssl://smtp.googlemail.com';
+        $config['smtp_port'] = 465; //465
         $config['smtp_user'] = 'parkeasing@gmail.com';
         $config['smtp_pass'] = 'metralla';
         $config['validation'] = TRUE;
@@ -62,12 +63,16 @@ class Usuario_model extends CI_Model {
                 . '<a href="' . base_url() . 'index.php/login/confirmar/' . $code . '">Enlace de confirmacion</a></p>'
                 . '<h3>Gracias por registrarte</h3>');
 
-        $this->email->send();
+       if($this->email->send()){
+           
+       }else{
+           show_error($this->email->print_debugger());
+       }
     }
 
     //verifica si el codigo es correcto
     function is_code($valor, $columna) {
-        $prepare_query = "select id from usuario where codigo =".$valor;
+        $prepare_query = "select id from usuario where codigo =" . $valor;
         $query = $this->db->query($prepare_query);
         if ($query->num_rows() == 1) {
             return true;
@@ -109,7 +114,7 @@ class Usuario_model extends CI_Model {
 
     //Cambia el usuario a activo 
     function update_estado_user($code) {
-        $sql = "UPDATE usuario SET estado = 2 WHERE codigo=".$code;
+        $sql = "UPDATE usuario SET estado = 2 WHERE codigo=" . $code;
         $this->db->query($sql);
     }
 
@@ -131,10 +136,10 @@ class Usuario_model extends CI_Model {
 
     // Devuelve el usuario segun su login
     function get_by_username($username) {
-       $query = $this->db->get_where($this->table, array('login' => $username), 1);
-        if ($query->num_rows() > 0){
+        $query = $this->db->get_where($this->table, array('login' => $username), 1);
+        if ($query->num_rows() > 0) {
             return $query->row_array();
-        }else{
+        } else {
             return false;
         }
     }
@@ -168,27 +173,31 @@ class Usuario_model extends CI_Model {
     //Usuario por id
     function get_by_id($id) {
         $query = $this->db->get_where($this->table, array('id' => $id), 1);
-        if ($query->num_rows() > 0)
+        if ($query->num_rows() > 0) {
             return $query->row_array();
-        return false;
+        } else {
+            return false;
+        }
     }
 
     //Verifica que el email existe
     function email_exists($email) {
         $query = $this->db->get_where($this->table, array('email' => $email), 1);
-        if ($query->num_rows() > 0){
-        return true;
-        }else{
-        return false;
-    }
+        if ($query->num_rows() > 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     //Checkea si existe el usuario
     function username_exists($username) {
         $query = $this->db->get_where($this->table, array('login' => $username), 1);
-        if ($query->num_rows() > 0)
+        if ($query->num_rows() > 0) {
             return true;
-        return false;
+        } else {
+            return false;
+        }
     }
 
     // Generate hashed password

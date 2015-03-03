@@ -13,7 +13,7 @@
  */
 class Profile extends CI_Controller {
     //put your code here
-        public function __construct() {
+    public function __construct() {
         parent::__construct();
         $this->load->model('usuario_model');
     }
@@ -23,7 +23,6 @@ class Profile extends CI_Controller {
         if (!$this->session->userdata('usuario')){
             redirect('home', 'refresh');      
         }else{
-        
         $usuario= $this->session->userdata('usuario');
         
         $datos['datos_usuario'] = $this->usuario_model->get_by_username($usuario);

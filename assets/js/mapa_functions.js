@@ -10,6 +10,10 @@
         toast('<span>Añadir sitio</span><a class="btn-flat blue-text" href="#" onclick="add_parkeasy()">Confirmar<a>', 3000);
     }
 
+    function getCoordenadas() {
+        return pos;
+        setInterval(getCoordenadas, 2000);
+    }
 
     function add_parkeasy() {
 
@@ -17,28 +21,34 @@
         var longitud = pos.lng();
 
         $.post(
-                "mapa/parkeasy",
-                {'latitud': latitud, 'longitud': longitud}
-        )
-                .done(function (data) {
-                    toast(data, 4000);
-                });
+            "mapa/parkeasy",
+            {'latitud': latitud, 'longitud': longitud}  
+        //cuando la funcion se ha ejecutado le envio la informacion de servidor
+        ).done(function (data) {
+                toast(data, 4000);
+            });         
     }
+    //maker lo paso en la llamada debe estar.. es el id (no valido)
+    function ruta(lat, lng, id_marker) {
+        
+        lat_destino = lat;
+        lng_destino = lng;
+        id_marker_destino = id_marker;
 
-    function ruta(lat, lng, marker) {
-
-        var destino = new google.maps.LatLng(lat, lng);
+        var destino = new google.maps.LatLng(lat_destino, lng_destino);
 
         var request = {
             origin: pos,
             destination: destino,
-            travelMode: google.maps.TravelMode.DRIVING
+            travelMode: google.maps.TravelMode.DRIVING,
+            provideRouteAlternatives: true
         };
         directionsService.route(request, function (response, status) {
             if (status == google.maps.DirectionsStatus.OK) {
                 directionsDisplay.setDirections(response);
             }
         });
+
     }
 
     function ruta_toggle() {
@@ -53,20 +63,28 @@
 
     function getPosition (position) {
 
-                pos = new google.maps.LatLng(position.coords.latitude,
-                        position.coords.longitude);
+        pos = new google.maps.LatLng(position.coords.latitude,
+                position.coords.longitude);
 
-                if(!miMarker){
-                    miMarker = new google.maps.Marker({
-                    position: pos,
-                    map: map
-                });
-            }else{
-                miMarker.setPosition(pos);
-            }
-
-                map.setCenter(pos); //Centra el mapa (cada vez que hay una nueva geolocalizacio (MOLESTO!!)
-            }
+        if(!miMarker){
+            miMarker = new google.maps.Marker({
+            position: pos,
+            map: map
+            });
+        }else{
+            miMarker.setPosition(pos);
+        }
+        
+        if(getCenterMap) {
+            map.setCenter(pos);
+            getCenterMap = false;
+        }
+        
+        if (lat_destino != null && lng_destino != null){
+            ruta(lat_destino, lng_destino, id_marker_destino);
+        }
+           
+        }
             
             
      function errorGettingPosition (err) { 
@@ -75,7 +93,7 @@
 		alert ("Usuario negó geolocalización."); 
 	} 
 	else if (err.code == 2) { 
-		alert ("Posición disponible."); 
+		alert ("Posición no disponible."); 
 	} 
 	else if(err.code == 3) { 
 		alert ("Tiempo de espera agotado."); 
@@ -84,3 +102,4 @@
 		alert ("ERROR:" + err.message); 
 	} 
     }
+    

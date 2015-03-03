@@ -7,8 +7,7 @@
  */
 class Mapa extends CI_Controller {
 
-     public function __construct()
-    {
+     public function __construct(){
         parent::__construct();
         $this->load->model('mapa_model');
         $this->load->model('usuario_model');
@@ -24,6 +23,8 @@ class Mapa extends CI_Controller {
         $config = array();
         
         $config['zoom'] = 'auto'; 
+        
+        //$config['draggable'] = false;
         
         $config['mapTypeControlStyle'] = 'DROPDOWN_MENU'; 
         
