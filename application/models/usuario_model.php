@@ -33,7 +33,7 @@ class Usuario_model extends CI_Model {
         );
 
         $this->db->insert($this->table, $user);
-        $this->send_email($code);
+        //$this->send_email($code); //NO EN DESPLEGADO
     }
 
     //envia un email de confirmacion

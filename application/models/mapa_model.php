@@ -23,23 +23,11 @@ class Mapa_model extends CI_Model {
 
     public function add_marker($lat, $lng, $id_usuario) {
         //Dattos en array para insertar en las columnas
-        $markers = $this->get_markers();
-        $coincide = 0;
-
-        foreach ($markers as $columna) {
-            if ($columna->id_usuario != null) {
-                if ($columna->id_usuario == $id_usuario) {
-                    $coincide++;
-                }
-            }else{
-                 $coincide = 0;
-            }
-        }
-
-        if ($coincide < 3) {
+        if ($this->mira_marker($id_usuario)) {
             $data = array(
                 'pos_x' => $lng,
                 'pos_y' => $lat,
+                'fecha'=> date('Y-m-d H:i:s'),
                 'id_usuario' => $id_usuario
             );
             //aqui se realiza la inserción, si queremos devolver algo deberíamos usar delantre return
@@ -48,6 +36,24 @@ class Mapa_model extends CI_Model {
         } else {
             return false;
         }
+    }
+    
+    private function mira_marker($id_usuario){
+        
+        $markers = $this->get_markers();
+        $coincide = 0;
+        foreach ($markers as $columna) {
+            if ($columna->id_usuario == $id_usuario) {
+                $coincide++;
+            }
+        }
+        
+        if ($coincide <= 3) {
+            return true;
+        }else{
+            return false;
+        }
+        
     }
 
 }

@@ -17,7 +17,8 @@ class Mapa extends CI_Controller {
     public function index() {
         
         if (!$this->session->userdata('usuario')){
-            redirect('home', 'refresh');      
+            $data = array('mensaje' => 'No has iniciado sesion.');
+            $this->load->view('plantillas/home_view',$data); 
         }else{
         
         $config = array();

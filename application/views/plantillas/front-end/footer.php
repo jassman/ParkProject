@@ -7,27 +7,27 @@
     </div>
     <ul class="mm-menu__items">
       <li class="mm-menu__item">
-        <a class="mm-menu__link" href="home">
+        <a class="mm-menu__link" href="<?php echo base_url();?>home">
           <span class="mm-menu__link-text"><i class="mdi-action-account-circle"></i>  Home</span>
         </a>
       </li>
       <li class="mm-menu__item">
-        <a class="mm-menu__link" href="profile">
+        <a class="mm-menu__link" href="<?php echo base_url();?>profile">
           <span class="mm-menu__link-text"><i class="mdi-action-account-circle"></i>  Profile</span>
         </a>
       </li>
       <li class="mm-menu__item">
-        <a class="mm-menu__link" href="mapa">
+        <a class="mm-menu__link" href="<?php echo base_url();?>mapa">
           <span class="mm-menu__link-text"><i class="mdi-action-room"></i> Encuentra Sitio</span>
         </a>
       </li>
       <li class="mm-menu__item">
-        <a class="mm-menu__link" href="comunidad">
+        <a class="mm-menu__link" href="<?php echo base_url();?>comunidad/mensajes">
           <span class="mm-menu__link-text"><i class="mdi-action-account-child"></i> Foro</span>
         </a>
       </li>
       <li class="mm-menu__item">
-        <a class="mm-menu__link" href="login/logout">
+        <a class="mm-menu__link" href="<?php echo base_url();?>login/logout">
           <span class="mm-menu__link-text"><i class=mdi-action-highlight-remove"></i> Salir</span>
         </a>
       </li>

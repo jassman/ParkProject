@@ -2,3 +2,25 @@
 #
 #RewriteCond $1 !^(index\.php|robots\.txt|sitemap\.xml|assets)
 #RewriteRule ^(.*)$ index.php/$1 [L]
+
+#    RewriteEngine On
+#    RewriteCond %{REQUEST_FILENAME} !-f 
+#    RewriteCond %{REQUEST_FILENAME} !-d
+#    RewriteRule ^(.*)$ /gmaps_ci/index.php/$1 [L]
+#    ErrorDocument 404 /gmaps_ci/index.php
+
+#RewriteEngine on
+#RewriteCond $1 !^(index.php|images|css|js|robots\.txt)
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule ^(.*)$ index.php/$1 [L]
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /parkeasing
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L]
+</IfModule>
+<IfModule !mod_rewrite.c>
+ErrorDocument 404 /parkeasing/index.php
+</IfModule>

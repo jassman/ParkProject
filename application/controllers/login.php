@@ -23,24 +23,24 @@ class Login extends CI_Controller {
         $valid_login = $this->usuario_model->is_valid_user($username,$password);
         
         if ($valid_login) {
-//             $usuario = $this->usuario_model->get_by_username($username);
-//             $data_session = array('usuario'=>''.$username.'',
-//                                      'pass'=>''.$password.'',
-//                                        'id'=>''.$usuario[id].'');
-//                
-//               $this->session->set_userdata($data_session);
-//               redirect(base_url().'index.php/profile');
-            $estado = $this->usuario_model->is_active($username,$password);
-            if($estado) {
-                $data_session = array('usuario'=>''.$username.'',
-                                        'pass'=>''.$password.'');
+             $usuario = $this->usuario_model->get_by_username($username);
+             $data_session = array('usuario'=>''.$username.'',
+                                      'pass'=>''.$password.'',
+                                        'id'=>''.$usuario[id].'');
                 
-                $this->session->set_userdata($data_session);
-                redirect(base_url().'index.php/profile');
-            } else {
-                $data = array('mensaje' => 'El usuario no esta activado, verifique el correo electronico');
-                $this->load->view('plantillas/home_view',$data);
-            }
+               $this->session->set_userdata($data_session);
+               redirect(base_url().'index.php/profile');
+//            $estado = $this->usuario_model->is_active($username,$password);
+//            if($estado) {
+//                $data_session = array('usuario'=>''.$username.'',
+//                                        'pass'=>''.$password.'');
+//                
+//                $this->session->set_userdata($data_session);
+//                redirect(base_url().'index.php/profile');
+//            } else {
+//                $data = array('mensaje' => 'El usuario no esta activado, verifique el correo electronico');
+//                $this->load->view('plantillas/home_view',$data);
+          //  }
         } else {
             $data = array('mensaje' => 'El nombre de usuario o contraseña son incorrectos');
             $this->load->view('plantillas/home_view',$data);
@@ -49,11 +49,9 @@ class Login extends CI_Controller {
 
     public function register() {
 
-        $user = $this->input->post('user');
-        
+        $user = $this->input->post('user');     
         //Verificamos si el usuario ya existe
         if (!$this->usuario_model->username_exists($user)){
-
             //Verificamos si ha subido una foto
             if($_FILES['foto']['name'] !=''){
                 $respuesta = $this->upload_image();
@@ -65,7 +63,7 @@ class Login extends CI_Controller {
                     $mensaje = $respuesta;
                 }        
             }else{
-                $this->usuario_model->add_user('anonimo.jpg');
+                $this->usuario_model->add_user('anonymouse.png');
                 $mensaje = "El usuario se registro correctamente";
             }
             }else{
@@ -115,7 +113,7 @@ class Login extends CI_Controller {
         $config['max_size'] = 2*1024;
         $config['max_width'] = '1024';
         $config['max_height'] = '1024';
-        $config['file_name'] = $this->input->post('login');
+        $config['file_name'] = $this->input->post('user');
         $config['remove_spaces'] = TRUE;
         
         $this->load->library('upload', $config);
