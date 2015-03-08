@@ -5,6 +5,7 @@ class Comunidad extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('comunidad_model');
+        $this->load->library('pagination');
     }
 
     public function index() {
@@ -30,12 +31,11 @@ class Comunidad extends CI_Controller {
             $usuario = $this->session->userdata('usuario');
             $datos['datos_usuario'] = $this->usuario_model->get_by_username($usuario);
             
-            $pages = 5; //Número de registros mostrados por páginas
-            $this->load->library('pagination'); //Cargamos la librería de paginación
+            $pages = 8; //Número de registros mostrados por páginas
             $config['base_url'] = base_url().'comunidad/mensajes';
             $config['total_rows'] = $this->comunidad_model->get_pages(); //calcula el número de filas  
             $config['per_page'] = $pages; //Número de registros mostrados por páginas
-            $config['num_links'] = 10; //Número de links mostrados en la paginación
+            $config['num_links'] = 1; //Número de links mostrados en la paginación
             $config["uri_segment"] = 3; //el segmento de la paginación
 
             $this->pagination->initialize($config); //inicializamos la paginación        
@@ -61,12 +61,14 @@ class Comunidad extends CI_Controller {
             $respuesta = $this->comunidad_model->add_mensaje($id, $mensaje, $ciudad);
             
             if($respuesta){
-               $this->mensajes();
+                $this->mensajes();              
             }
-        }
-        
-        
+        }     
     }
+    
+    
+    
+    
     
 
 }

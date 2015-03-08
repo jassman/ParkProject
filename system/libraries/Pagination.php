@@ -35,10 +35,10 @@ class CI_Pagination {
 	var $num_links			=  2; // Number of "digit" links to show before/after the currently viewed page
 	var $cur_page			=  0; // The current page being viewed
 	var $use_page_numbers           = FALSE; // Use page number for segment instead of offset
-	var $first_link			= 'Primero';
-	var $next_link			= 'Siguiente';
-	var $prev_link			= 'Previo';
-	var $last_link			= 'Ultimo';
+	var $first_link			= '';
+	var $next_link			= '<i class="mdi-navigation-chevron-right"></i>';
+	var $prev_link			= '<i class="mdi-navigation-chevron-left" ></i>';
+	var $last_link			= '';
 	var $uri_segment		= 3;
 	var $full_tag_open		= '<ul class="pagination">';
 	var $full_tag_close		= '</ul>';

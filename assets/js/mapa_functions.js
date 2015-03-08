@@ -43,6 +43,7 @@
             travelMode: google.maps.TravelMode.DRIVING,
             provideRouteAlternatives: true
         };
+        
         directionsService.route(request, function (response, status) {
             if (status == google.maps.DirectionsStatus.OK) {
                 directionsDisplay.setDirections(response);
@@ -65,7 +66,8 @@
 
         pos = new google.maps.LatLng(position.coords.latitude,
                 position.coords.longitude);
-
+        
+        //creo un marker si no existe
         if(!miMarker){
             miMarker = new google.maps.Marker({
             position: pos,
@@ -75,14 +77,16 @@
             miMarker.setPosition(pos);
         }
         
+        //Solo lo centro una vez
         if(getCenterMap) {
             map.setCenter(pos);
             getCenterMap = false;
         }
         
-        if (lat_destino != null && lng_destino != null){
-            ruta(lat_destino, lng_destino, id_marker_destino);
-        }
+        //Recalcula la ruta por geolocalizacion
+//        if (lat_destino != null && lng_destino != null){
+//            ruta(lat_destino, lng_destino, id_marker_destino);
+//        }
            
         }
             

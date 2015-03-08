@@ -25,9 +25,9 @@ $(document).ready(function() {
 
     $(window).scroll(function() {
         if ($(window).scrollTop() > 15) {
-            $(".mensaje-flotante").fadeIn();
-        } else {
             $(".mensaje-flotante").fadeOut();
+        } else {
+            $(".mensaje-flotante").fadeIn();
         }
     });
 
@@ -41,9 +41,8 @@ $(document).ready(function() {
         $.post({
             url: $(this).attr('action'),
             data: $(this).serialize()
-        }).done(function(data)
-        {
-            alert(data);
+        }).done(function(data) {
+             var result = JSON.parse(data);
         });
     });
 

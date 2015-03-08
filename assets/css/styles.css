@@ -268,6 +268,14 @@ mapa-ruta{
     float: right;
 }
 
+.collapsible-header{
+    height: 60px;
+}
+.collapsible-header img{
+    margin-top: 5px;
+    max-height: 50px;
+}
+
 .pag ul {
     width: 100%;
     text-align: center;
@@ -301,7 +309,6 @@ mapa-ruta{
     position: fixed;
     bottom: 20px;
     right: 20px;
-    display: none;
 }
 
 .btn-enviar{
@@ -317,11 +324,15 @@ mapa-ruta{
     height: 50%;
 }
 
-.modal-mensaje div {
+.modal-mensaje form{
     height: 100%;
 }
 
-.modal-mensaje textarea{
+form div {
+    height: 100%;
+}
+
+form textarea{
     height: 80%;
     margin-top: 10px;
 }

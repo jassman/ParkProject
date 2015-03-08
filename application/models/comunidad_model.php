@@ -70,5 +70,7 @@ class Comunidad_model extends CI_Model {
         return true;
         
     }
+    
+    
 
 }

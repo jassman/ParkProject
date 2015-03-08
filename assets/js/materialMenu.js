@@ -56,7 +56,6 @@
    *
    * Get's the position based on event/element.
    */
-
   function getPosition(e) {
     var posx = 0;
     var posy = 0;
@@ -84,7 +83,7 @@
    */
 
   function getOffsetRect(elem) {
-    var box = elem.getBoundingClientRect()
+    var box = elem.getBoundingClientRect();
      
     var body = document.body;
     var docElem = document.documentElement;
@@ -146,14 +145,14 @@
     this._initTouchEffect();
     this._initMaskEvents();
   };
-
+  
   /**
    * Menu `_initEvents`
    *
    * Get ready for the events taking place. Mainly just the pressing of the
    * toggle button.
    */
-
+  
   Menu.prototype._initToggleEvents = function() {
     var scope = this;
     this.toggle.addEventListener( "click", function() {

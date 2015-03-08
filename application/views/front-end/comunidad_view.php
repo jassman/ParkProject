@@ -13,14 +13,15 @@
         </div>
         <div class="row">
             <div class="col s12 m10 l10 offset-m1 offset-l1">             
-                <ul class="collapsible" data-collapsible="accordion">
+                <ul class="collapsible" data-collapsible="accordion" id="list-ajax">
                     <?php
                     foreach ($comentario['mensajes'] as $comentarios) {
                         ?>
                         <li>
                             <div class="collapsible-header">
-                                <img class="circle responsive-img" style="max-width: 40px;" src="<?php echo base_url(); ?>files/img/<?= $comentarios['usuario']['foto']; ?>">
-                                <?= $comentarios['usuario']['nombre'] ?><span><?= $comentarios['ciudad'] ?></span>
+                                <img class="circle responsive-img" src="<?php echo base_url(); ?>files/img/<?= $comentarios['usuario']['foto']; ?>">
+                                <span><?= $comentarios['usuario']['nombre'] ?></span>
+                                <span><?= $comentarios['ciudad'] ?></span>
                             </div>
                             <div class="collapsible-body">
                                 <p> <?= $comentarios['contenido'] ?></p>
@@ -48,7 +49,7 @@
                 <textarea  type="text" id="mensaje" name="mensaje" required></textarea >
             </div> 
             <div class="col s2">
-                <input type="submit" class="btn waves-effect waves-light light-blue btn-enviar"><i class="mdi-content-add"></i></button>
+                <button type="submit" class="btn waves-effect waves-light light-blue btn-enviar"><i class="mdi-content-add"></i></button>
             </div> 
         </div>
     </form>
