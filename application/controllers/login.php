@@ -13,6 +13,7 @@ class Login extends CI_Controller {
         // Call the Controller constructor
         parent::__construct();
         $this->load->model('usuario_model');
+        $this->load->model('mapa_model');
     }
 
     public function index() { 
@@ -23,6 +24,7 @@ class Login extends CI_Controller {
         $valid_login = $this->usuario_model->is_valid_user($username,$password);
         
         if ($valid_login) {
+             $this->mapa_model->destroy_markers();
              $usuario = $this->usuario_model->get_by_username($username);
              $data_session = array('usuario'=>''.$username.'',
                                       'pass'=>''.$password.'',

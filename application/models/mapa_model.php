@@ -17,7 +17,7 @@ class Mapa_model extends CI_Model {
             //Devolvemos los markers
             return $markers->result();
         } else {
-            alert("No hay datos de merkers");
+            return false;
         }
     }
 
@@ -42,9 +42,11 @@ class Mapa_model extends CI_Model {
         
         $markers = $this->get_markers();
         $coincide = 0;
-        foreach ($markers as $columna) {
-            if ($columna->id_usuario == $id_usuario) {
-                $coincide++;
+        if($markers){
+            foreach ($markers as $columna) {
+                if ($columna->id_usuario == $id_usuario) {
+                    $coincide++;
+                }
             }
         }
         
@@ -52,6 +54,26 @@ class Mapa_model extends CI_Model {
             return true;
         }else{
             return false;
+        }
+        
+    }
+    
+        public function destroy_markers(){
+        $array = array();
+        $date = date('Y-m-d H:i:s');
+        $fecha_actual = strtotime ( '-10 minute' , strtotime($date));
+        
+        $query= "select id,fecha from mapa";
+        $result = $this->db->query($query);
+        
+        if ($result->num_rows() > 0){
+            $arreglo_fechas = $result->result_array();
+            foreach($arreglo_fechas as $columna){
+                $resultado = $fecha_actual - strtotime($columna['fecha']);
+                if ($resultado > 600){
+                    $this->db->delete('mapa', array('id'=>$columna['id']));
+                }
+            }
         }
         
     }

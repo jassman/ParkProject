@@ -93,8 +93,10 @@ class Mapa extends CI_Controller {
         if (!$this->session->userdata('usuario')){
             redirect('home', 'refresh');      
         }else{
-        $lat = $this->input->post('latitud');
-        $lng = $this->input->post('longitud');
+            
+        $get = $this->uri->uri_to_assoc();
+        $lat = $get['lat'];//$this->input->post('latitud');
+        $lng = $get['lng'];//$this->input->post('longitud');
         $id_usuario = $this->session->userdata('id');
         
         $can_put_markers = $this->mapa_model->add_marker($lat, $lng, $id_usuario);

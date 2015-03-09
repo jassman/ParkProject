@@ -62,8 +62,8 @@
                                 <input type="text" class="form-input" id="nombre" name="nombre" required value="<?php echo set_value('nombre'); ?>">
                             </div>
                             <div class="col s12">
-                                <label for="apellido">Apellido:</label>
-                                <input type="text" class="form-input" id="apellido" name="apellido" required value="<?php echo set_value('apellido'); ?>">
+                                <label for="ciudad">Ciudad:</label>
+                                <input type="text" class="form-input" id="ciudad" name="ciudad" required value="<?php echo set_value('ciudad'); ?>">
                             </div>
                             <div class="col s12">
                                 <label  for="user">Nombre Usuario:</label>
@@ -81,15 +81,15 @@
                                 <label class="control-label" for="email">Email:</label>
                                 <input type="text" class="form-input" id="email" name="email" value="<?php echo set_value('email'); ?>">                       
                             </div>
-<!--                            <div class="col s12">                     
-                                <div class="file-field input-field">
-                                    <input class="file-path validate" type="text"/>
-                                    <button class="btn waves-effect waves-light light-blue btn-foto">
-                                        <span>Selecciona una foto (opcional)</span>
-                                        <input type="file" class="form-input" name="foto" value="<?php echo set_value('foto') ?>"/>
-                                    </button>                 
-                                </div>
-                            </div>-->
+                            <!--                            <div class="col s12">                     
+                                                            <div class="file-field input-field">
+                                                                <input class="file-path validate" type="text"/>
+                                                                <button class="btn waves-effect waves-light light-blue btn-foto">
+                                                                    <span>Selecciona una foto (opcional)</span>
+                                                                    <input type="file" class="form-input" name="foto" value="<?php echo set_value('foto') ?>"/>
+                                                                </button>                 
+                                                            </div>
+                                                        </div>-->
                             <div class="col s12">
                                 <button class="btn waves-effect waves-light light-blue btn-foto">
                                     <input type="submit" id="enviar" name="enviar" value="ENVIAR"> 

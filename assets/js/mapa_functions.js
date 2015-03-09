@@ -21,8 +21,7 @@
         var longitud = pos.lng();
 
         $.post(
-            "mapa/parkeasy",
-            {'latitud': latitud, 'longitud': longitud}  
+            "index.php/mapa/parkeasy/lat/" + latitud +"/lng/" + longitud
         //cuando la funcion se ha ejecutado le envio la informacion de servidor
         ).done(function (data) {
                 toast(data, 4000);

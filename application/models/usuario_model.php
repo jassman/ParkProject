@@ -21,10 +21,10 @@ class Usuario_model extends CI_Model {
 //        $code = $code.$this->input->post('user');
         $user = array(
             'nombre' => filter_input(INPUT_POST, 'nombre'),
-            'apellido' => filter_input(INPUT_POST, 'apellido'),
             'login' => $this->input->post('user'),
             'email' => $this->input->post('email'),
             'password' => $this->input->post('password'),
+            'ciudad' => $this->input->post('ciudad'),
             'codigo' => $code,
             'estado' => 0,
             'nivel' => 'registrado',
